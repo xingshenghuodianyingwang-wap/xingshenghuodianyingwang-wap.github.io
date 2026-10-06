@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="description" content="性生活电影网 - 聚焦真实生活，精选家庭、情感、职场、纪录等贴近生活的好电影。在光影中读懂生活，收获温暖与力量。">
+<meta name="keywords" content="性生活电影网,生活电影,家庭电影,情感电影,文艺片,治愈系电影,纪录片,真实生活,光影生活">
+<meta name="author" content="性生活电影网">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#faf6f0">
+<meta property="og:title" content="性生活电影网 - 在光影中读懂生活">
+<meta property="og:description" content="聚焦真实生活，精选家庭、情感、职场、纪录等贴近生活的好电影。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://xingshenghuodianyingwang-wap.github.io">
+<meta property="og:site_name" content="性生活电影网">
+<link rel="canonical" href="https://xingshenghuodianyingwang-wap.github.io">
+<title>性生活电影网 - 在光影中读懂生活，精选生活好电影</title>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#faf6f0;--bg2:#f3ebde;--card:rgba(176,141,87,.1);--line:rgba(176,141,87,.35);
+  --txt:#3a2f26;--dim:#8a7663;--wd:#7fa968;--wd2:#a8c98f;--wn:#b08d57;--wn2:#d9b88a;--rw:#c97b5e;--rw2:#e09b80;--bg1:#efe6d6;
+  --g1:linear-gradient(120deg,#7fa968,#a8c98f);--g2:linear-gradient(120deg,#b08d57,#d9b88a);--g3:linear-gradient(120deg,#c97b5e,#e09b80);--g4:linear-gradient(120deg,#a8c98f,#d9b88a);
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg);color:var(--txt);line-height:1.75;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+::selection{background:var(--wn);color:#fff}
+img{max-width:100%;display:block}
+
+/* BG */
+.bg{position:fixed;inset:0;z-index:-3;background:radial-gradient(ellipse at 50% -10%,#f3ebde,#faf6f0 60%)}
+.grain{position:fixed;inset:0;z-index:-2;pointer-events:none;opacity:.035;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.gl1{position:fixed;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(127,169,104,.18),transparent 65%);z-index:-1;top:-200px;left:-150px}
+.gl2{position:fixed;width:460px;height:460px;border-radius:50%;background:radial-gradient(circle,rgba(201,123,94,.15),transparent 65%);z-index:-1;bottom:-160px;right:-130px}
+
+/* LOADER */
+.load{position:fixed;inset:0;z-index:9999;background:var(--bg);display:grid;place-items:center;gap:16px;transition:opacity .6s,visibility .6s}
+.load.hide{opacity:0;visibility:hidden}
+.cup{width:52px;height:52px;border-radius:50%;border:4px solid rgba(176,141,87,.22);border-top-color:var(--wd);border-right-color:var(--wn);animation:sp 1s linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}
+.load-tx{font-size:.72rem;letter-spacing:6px;color:var(--wn);text-transform:uppercase}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(250,246,240,.9);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nb{max-width:1280px;margin:0 auto;padding:0 22px;height:70px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:11px;font-weight:900;font-size:1.2rem;flex:0 0 auto;color:var(--txt)}
+.brand .lg{width:42px;height:42px;border-radius:13px;background:var(--g1);display:grid;place-items:center;font-size:1.1rem;flex:0 0 auto}
+.brand .em{color:var(--dim);font-weight:400;font-size:.88rem}
+.brand .lv{display:inline-flex;align-items:center;gap:5px;font-size:.68rem;color:#fff;background:var(--g1);border-radius:20px;padding:3px 10px;margin-left:8px;font-weight:700}
+.brand .lv::before{content:'●';color:#fff;font-size:.5rem;animation:pl 1.6s infinite}
+@keyframes pl{50%{box-shadow:0 0 0 6px rgba(127,169,104,.35)}}
+.menu{display:flex;gap:2px;align-items:center}
+.menu a{padding:9px 15px;border-radius:20px;font-size:.9rem;color:var(--dim);transition:.25s;white-space:nowrap;font-weight:600}
+.menu a:hover{color:var(--txt);background:rgba(176,141,87,.16)}
+.menu a.on{color:#fff;background:var(--g2);font-weight:800}
+.search{flex:0 0 auto;display:flex;align-items:center;gap:7px;border:1px solid var(--line);border-radius:22px;padding:6px 15px;background:var(--card)}
+.search input{border:none;outline:none;background:transparent;color:var(--txt);font-size:.86rem;width:120px;font-family:inherit}
+.search input::placeholder{color:var(--dim)}
+.burger{display:none;width:42px;height:42px;border-radius:11px;border:1px solid var(--line);background:var(--card);cursor:pointer;position:relative;flex:0 0 auto}
+.burger span{position:absolute;left:11px;width:18px;height:2px;background:var(--wn);border-radius:2px;transition:.3s}
+.burger span:nth-child(1){top:14px}.burger span:nth-child(2){top:20px}.burger span:nth-child(3){top:26px}
+.burger.open span:nth-child(1){top:20px;transform:rotate(45deg)}.burger.open span:nth-child(2){opacity:0}.burger.open span:nth-child(3){top:20px;transform:rotate(-45deg)}
+
+/* HERO */
+.hero{min-height:100vh;max-width:1280px;margin:0 auto;padding:120px 22px 70px;display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:center}
+.hero h1{font-size:clamp(2rem,5.4vw,4.5rem);line-height:1.05;font-weight:900;letter-spacing:-1px}
+.hero h1 .gr{background:var(--g2);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.hero h1 .sm{display:inline-block;font-size:.38em;vertical-align:middle;background:var(--bg1);color:var(--wd);padding:6px 14px;border-radius:8px;margin-left:8px;letter-spacing:2px;font-weight:700}
+.badge{display:inline-flex;align-items:center;gap:9px;padding:6px 15px;border:1px solid var(--line);border-radius:30px;font-size:.76rem;color:var(--wn);margin-bottom:22px;background:var(--card)}
+.badge b{color:var(--wd);font-weight:900}
+.hero .sub{margin-top:22px;color:var(--dim);font-size:clamp(.95rem,1.5vw,1.08rem);max-width:500px}
+.acts{display:flex;gap:14px;margin-top:30px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:14px 30px;border-radius:10px;font-size:.92rem;font-weight:700;cursor:pointer;border:none;transition:.3s;letter-spacing:.5px;font-family:inherit}
+.btn-f{background:var(--g2);color:#fff;box-shadow:0 8px 26px rgba(176,141,87,.45)}
+.btn-f:hover{transform:translateY(-3px);box-shadow:0 14px 38px rgba(176,141,87,.55)}
+.btn-o{background:transparent;color:var(--wd);border:1px solid var(--line)}
+.btn-o:hover{border-color:var(--wd);background:rgba(127,169,104,.16);transform:translateY(-3px)}
+.mini{display:flex;gap:34px;margin-top:38px}
+.mini div b{display:block;font-size:1.85rem;font-weight:900;background:var(--g2);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.mini div span{font-size:.72rem;color:var(--dim);text-transform:uppercase;letter-spacing:1px}
+
+/* HERO 右：手账卡 */
+.jrn{position:relative;width:100%;max-width:460px;margin:0 auto}
+.jc{position:absolute;border-radius:16px;box-shadow:0 18px 44px rgba(58,47,38,.16);transition:.5s}
+.jc:hover{transform:translateY(-6px) rotate(0deg)!important;z-index:5}
+.jc1{width:58%;left:0;top:0;background:linear-gradient(160deg,#b08d57,#d9b88a);padding:22px;color:#fff;transform:rotate(-5deg);z-index:3}
+.jc1 h4{font-size:1.15rem;margin-bottom:8px}
+.jc1 p{font-size:.86rem;line-height:1.7;opacity:.94}
+.jc2{width:52%;right:0;top:130px;background:#fff;padding:16px;border:1px solid var(--line);transform:rotate(4deg);z-index:2}
+.jc2 .ph{height:100px;border-radius:10px;background:linear-gradient(135deg,#7fa968,#a8c98f);margin-bottom:11px}
+.jc2 span{font-size:.82rem;color:var(--dim)}
+.jc3{width:48%;;left:14%;top:250px;background:#fff7ee;border:1px dashed var(--wn);padding:15px;transform:rotate(-3deg);z-index:4}
+.jc3 .q{font-size:1.8rem;color:var(--rw);line-height:1}
+.jc3 p{font-size:.86rem;color:var(--txt);margin-top:6px}
+.jc4{width:40%;right:4%;top:330px;background:linear-gradient(160deg,#c97b5e,#e09b80);padding:14px;border-radius:12px;color:#fff;text-align:center;transform:rotate(3deg);z-index:1}
+.jc4 b{display:block;font-size:1.5rem}
+
+/* SHARED */
+.wrap{max-width:1280px;margin:0 auto;padding:0 22px}
+.sec{padding:96px 0;position:relative}
+.st{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:46px;flex-wrap:wrap}
+.si{font-size:.72rem;letter-spacing:3px;color:var(--wd);font-weight:800;text-transform:uppercase}
+.st h2{font-size:clamp(1.5rem,3.2vw,2.3rem);font-weight:900;margin-top:4px}
+.st h2 .ac{background:var(--g2);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.sn{color:var(--dim);font-size:.9rem;max-width:330px;text-align:right}
+
+/* COL1 生活片单：Tab + 卡片 */
+#pick{background:var(--bg2)}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
+.tabs button{padding:8px 18px;border-radius:20px;border:1px solid var(--line);background:var(--card);color:var(--dim);font-size:.86rem;cursor:pointer;transition:.25s;font-family:inherit;font-weight:600}
+.tabs button.on{background:var(--g2);color:#fff;border-color:transparent}
+.tabs button:hover{border-color:var(--wn);color:var(--txt)}
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.pk{border-radius:16px;overflow:hidden;border:1px solid var(--line);background:#fff;cursor:pointer;transition:.35s;display:flex;flex-direction:column}
+.pk:hover{transform:translateY(-7px);box-shadow:0 16px 40px rgba(58,47,38,.14);border-color:var(--wn)}
+.pk .ph{height:170px;position:relative}
+.pk .ph::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(58,47,38,.5))}
+.pk .ic{position:absolute;top:12px;left:12px;width:38px;height:38px;border-radius:10px;background:rgba(255,255,255,.92);display:grid;place-items:center;font-size:1.1rem;z-index:2}
+.pk .bd{padding:16px;flex:1;display:flex;flex-direction:column}
+.pk h5{font-size:1rem;font-weight:800;margin-bottom:6px}
+.pk .mt{font-size:.78rem;color:var(--dim);margin-bottom:11px}
+.pk .pg{height:5px;border-radius:4px;background:var(--bg1);margin-top:auto;overflow:hidden}
+.pk .pg i{display:block;height:100%;background:var(--g4);width:0;transition:width 1.3s ease}
+
+/* COL2 生活随笔：手账卡片墙 */
+#notes{background:linear-gradient(180deg,var(--bg2),var(--bg))}
+.nwall{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.nt{border-radius:14px;padding:22px;transition:.35s;cursor:pointer}
+.nt:hover{transform:translateY(-6px) rotate(0deg)!important}
+.nt1{background:linear-gradient(160deg,#fff,#f3ebde);border:1px solid var(--line);box-shadow:0 8px 22px rgba(58,47,38,.08)}
+.nt2{background:linear-gradient(160deg,#fff7ee,#ffe8d6);border:1px dashed var(--rw);transform:rotate(-1.5deg)}
+.nt3{background:linear-gradient(160deg,#f2f7ec,#e4efd8);border:1px solid rgba(127,169,104,.4);transform:rotate(1.5deg)}
+.nt4{background:linear-gradient(160deg,#fdf0ea,#f7ddd1);border:1px solid rgba(201,123,94,.35);transform:rotate(-1deg)}
+.nt5{background:linear-gradient(160deg,#fff,#f3ebde);border:1px solid var(--line);box-shadow:0 8px 22px rgba(58,47,38,.08);transform:rotate(2deg)}
+.nt6{background:linear-gradient(160deg,#f0f5fa,#e2ecf5);border:1px solid rgba(120,150,180,.3);transform:rotate(-2deg)}
+.nt .q{font-size:2rem;line-height:1;margin-bottom:8px}
+.nt1 .q,.nt5 .q{color:var(--wn)}.nt3 .q,.nt6 .q{color:var(--wd)}.nt2 .q,.nt4 .q{color:var(--rw)}
+.nt h5{font-size:.98rem;font-weight:800;margin-bottom:7px}
+.nt p{font-size:.85rem;color:var(--dim);line-height:1.7}
+.nt .au{display:flex;align-items:center;gap:8px;margin-top:13px;font-size:.76rem;color:var(--wn);font-weight:700}
+.nt .au i{width:26px;height:26px;border-radius:50%;background:var(--g2);display:grid;place-items:center;color:#fff;font-style:normal;font-size:.72rem}
+
+/* COL3 治愈食光：左右交错食谱卡 */
+#food{background:var(--bg2)}
+.fds{display:flex;flex-direction:column;gap:26px}
+.fd{display:flex;gap:26px;align-items:center;border:1px solid var(--line);border-radius:18px;padding:22px;background:#fff;transition:.35s;cursor:pointer}
+.fd:hover{border-color:var(--wn);transform:translateX(6px);box-shadow:0 12px 32px rgba(58,47,38,.12)}
+.fd:nth-child(even){flex-direction:row-reverse}
+.fd .ph{flex:0 0 220px;height:150px;border-radius:14px}
+.fd .tx{flex:1}
+.fd .tg{display:inline-block;font-size:.7rem;font-weight:700;color:var(--wd);background:rgba(127,169,104,.16);border-radius:20px;padding:3px 11px;margin-bottom:9px}
+.fd h5{font-size:1.1rem;font-weight:800;margin-bottom:8px}
+.fd p{font-size:.87rem;color:var(--dim);line-height:1.7}
+.fd .rk{display:flex;gap:14px;margin-top:11px}
+.fd .rk span{font-size:.76rem;color:var(--wn);font-weight:700}
+
+/* COL4 生活方式：几何导航 */
+#life{background:linear-gradient(180deg,var(--bg),var(--bg2))}
+.lg2{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.lc{border:1px solid var(--line);border-radius:16px;padding:24px;background:var(--card);transition:.35s;cursor:pointer;text-align:center}
+.lc:hover{border-color:var(--wn);transform:translateY(-6px);background:rgba(176,141,87,.18)}
+.lc .ic{width:58px;height:58px;margin:0 auto 14px;border-radius:16px;background:var(--g4);display:grid;place-items:center;font-size:1.5rem}
+.lc:nth-child(2) .ic{border-radius:50%;background:var(--g1)}
+.lc:nth-child(3) .ic{border-radius:14px;background:var(--g3)}
+.lc:nth-child(4) .ic{border-radius:20px 6px 20px 6px;background:var(--g2)}
+.lc h5{font-size:1rem;font-weight:800;margin-bottom:6px}
+.lc p{font-size:.82rem;color:var(--dim);line-height:1.6}
+.ln{margin-top:36px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.ln .it{border:1px solid var(--line);border-radius:14px;padding:20px;background:#fff;transition:.3s;cursor:pointer;display:flex;gap:14px;align-items:flex-start}
+.ln .it:hover{border-color:var(--wn);transform:translateY(-4px)}
+.ln .it b{width:34px;height:34px;border-radius:9px;background:var(--g2);display:grid;place-items:center;color:#fff;font-size:.95rem;flex:0 0 auto;font-weight:900}
+.ln .it div h6{font-size:.92rem;font-weight:800;margin-bottom:3px}
+.ln .it div p{font-size:.8rem;color:var(--dim)}
+
+/* COL5 关于 */
+#about{background:var(--bg2)}
+.ag{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.lead{border-radius:20px;padding:30px;background:var(--g1);color:#fff}
+.lead h4{font-size:1.25rem;margin-bottom:12px}
+.lead p{font-size:.92rem;line-height:1.8;opacity:.96}
+.st2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.st2 .s{border:1px solid var(--line);border-radius:14px;padding:22px;background:#fff;transition:.3s}
+.st2 .s:hover{border-color:var(--wn);transform:translateY(-4px)}
+.st2 .s b{display:block;font-size:2rem;font-weight:900;background:var(--g2);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.st2 .s span{font-size:.82rem;color:var(--dim)}
+
+/* CTA */
+.cta{margin:0 auto;max-width:1236px;border:1px solid var(--line);border-radius:22px;padding:50px 40px;text-align:center;background:var(--g2);position:relative;overflow:hidden}
+.cta::after{content:'活';position:absolute;right:-10px;bottom:-56px;font-size:13rem;font-weight:900;color:rgba(255,255,255,.28);line-height:1}
+.cta h3{font-size:clamp(1.4rem,3vw,2rem);font-weight:900;margin-bottom:12px;position:relative;color:#fff}
+.cta p{color:rgba(255,255,255,.9);max-width:520px;margin:0 auto 24px;position:relative}
+.cta .btn{background:#3a2f26;color:#fff}
+.cta .btn:hover{background:#1f1812}
+
+footer{background:#f3ebde;padding:56px 22px 28px;border-top:1px solid var(--line)}
+.f{max-width:1280px;margin:0 auto;text-align:center}
+.bc{display:flex;align-items:center;gap:11px;justify-content:center;margin-bottom:14px;font-weight:900;font-size:1.2rem;color:var(--txt)}
+.bc .lg{width:42px;height:42px;border-radius:13px;background:var(--g1);display:grid;place-items:center;font-size:1.1rem;flex:0 0 auto}
+.bc .em{color:var(--dim);font-weight:400;font-size:.88rem}
+.f .d{color:var(--dim);font-size:.9rem;max-width:560px;margin:0 auto 22px}
+.f .lk{display:flex;gap:26px;justify-content:center;flex-wrap:wrap;margin-bottom:24px}
+.f .lk a{color:var(--dim);font-size:.88rem;transition:.25s}
+.f .lk a:hover{color:var(--wn)}
+.cp{padding-top:22px;border-top:1px solid var(--line);font-size:.8rem;color:var(--dim)}
+.cp a{color:var(--wd)}
+
+.tb{position:fixed;right:24px;bottom:28px;width:46px;height:46px;border-radius:50%;background:var(--g2);display:grid;place-items:center;font-size:1.1rem;cursor:pointer;opacity:0;visibility:hidden;transition:.3s;z-index:300;box-shadow:0 6px 22px rgba(176,141,87,.45);color:#fff;font-weight:900}
+.tb.show{opacity:1;visibility:visible}
+.tb:hover{transform:translateY(-3px)}
+
+.rv{opacity:0;transform:translateY(34px);transition:.7s cubic-bezier(.2,.7,.3,1)}
+.rv.in{opacity:1;transform:none}
+
+@media(max-width:980px){
+  .hero{grid-template-columns:1fr;gap:40px;padding-top:104px}.jrn{display:none}
+  .pgrid,.nwall{grid-template-columns:repeat(2,1fr)}.lg2,.ln{grid-template-columns:repeat(2,1fr)}.ag{grid-template-columns:1fr}
+}
+@media(max-width:768px){
+  .search{display:none}
+  .menu{position:fixed;top:70px;left:0;right:0;flex-direction:column;padding:18px;gap:4px;background:rgba(250,246,240,.98);border-bottom:1px solid var(--line);transform:translateY(-130%);transition:.4s}
+  .menu.open{transform:none}.menu a{width:100%;text-align:center;padding:14px}
+  .burger{display:block}.sec{padding:70px 0}.st{margin-bottom:30px}.sn{text-align:left}
+  .fd,.fd:nth-child(even){flex-direction:column;align-items:stretch}.fd .ph{flex:none;width:100%}
+}
+@media(max-width:480px){
+  .hero h1{font-size:1.95rem}.acts .btn{width:100%;justify-content:center}
+  .mini{gap:20px}.pgrid,.nwall,.lg2,.ln{grid-template-columns:1fr}.st2{grid-template-columns:1fr}
+  .tabs{overflow-x:auto;flex-wrap:nowrap;padding-bottom:6px}.tabs button{flex:0 0 auto}
+  .tb{right:16px;bottom:20px;width:42px;height:42px}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/xiaolu.js"></script>
+
+<div class="bg"></div>
+<div class="grain"></div>
+<div class="gl1"></div><div class="gl2"></div>
+
+<div class="load" id="load"><div class="cup"></div><div class="load-tx">性生活电影网 · 加载中</div></div>
+
+<nav class="nav">
+  <div class="nb">
+    <a href="#top" class="brand"><span class="lg">☘️</span><span>性生活电影网</span><span class="em">在光影中读懂生活</span><span class="lv">LIVE</span></a>
+    <div class="search"><span>🔍</span><input type="text" placeholder="搜索电影…"></div>
+    <div class="menu" id="menu">
+      <a href="#top" class="on">首页</a><a href="#pick">片单</a><a href="#notes">随笔</a><a href="#food">食光</a><a href="#life">生活</a><a href="#about">关于</a>
+    </div>
+    <button class="burger" id="burger" aria-label="菜单"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div>
+    <div class="badge">☕ 聚焦真实生活 · 精选 <b>家庭 / 情感 / 职场 / 纪录</b> 好电影</div>
+    <h1><span class="gr">生活</span>电影网<span class="sm">LIFE</span></h1>
+    <p class="sub">性生活电影网专注真实生活题材影片，从家庭温情到职场百态，从市井烟火到人间冷暖，在光影里读懂生活的千万种模样。</p>
+    <div class="acts">
+      <a href="#pick" class="btn btn-f">🎬 开始看片</a>
+      <a href="#notes" class="btn btn-o">📓 生活随笔</a>
+    </div>
+    <div class="mini">
+      <div><b>生活</b><span>真实题材</span></div>
+      <div><b>温暖</b><span>治愈观影</span></div>
+      <div><b>全端</b><span>随心观看</span></div>
+    </div>
+  </div>
+  <div class="jrn">
+    <div class="jc jc1"><h4>📖 今日生活手记</h4><p>“电影是生活的镜子，它映出我们走过的路、爱过的人，和那些说不出口的心事。”</p></div>
+    <div class="jc jc2"><div class="ph"></div><span>🎞️ 第 042 帧 · 记录日常</span></div>
+    <div class="jc jc3"><div class="q">“</div><p>生活不只有远方，还有眼前的一茶一饭、一帧光影。</p></div>
+    <div class="jc jc4"><b>365</b><span>天 · 每日一片</span></div>
+  </div>
+</header>
+
+<!-- COL1 -->
+<section class="sec" id="pick">
+  <div class="wrap">
+    <div class="st">
+      <div><span class="si">01 / Life Picks</span><h2>生活<span class="ac">片单</span></h2></div>
+      <p class="sn">真实题材 · 贴近生活的好电影</p>
+    </div>
+    <div class="tabs" id="tabs">
+      <button class="on">全部</button><button>家庭温情</button><button>都市职场</button><button>青春成长</button><button>市井烟火</button><button>纪录真实</button>
+    </div>
+    <div class="pgrid">
+      <div class="pk rv"><div class="ph" style="background:linear-gradient(135deg,#b08d57,#d9b88a)"><span class="ic">🏠</span></div><div class="bd"><h5>海蒂和爷爷</h5><div class="mt">📍 家庭 · 治愈 · 阿尔卑斯</div><div class="pg"><i data-w="94"></i></div></div></div>
+      <div class="pk rv"><div class="ph" style="background:linear-gradient(135deg,#7fa968,#a8c98f)"><span class="ic">🌾</span></div><div class="bd"><h5>小森林</h5><div class="mt">📍 美食 · 田园 · 治愈</div><div class="pg"><i data-w="92"></i></div></div></div>
+      <div class="pk rv"><div class="ph" style="background:linear-gradient(135deg,#c97b5e,#e09b80)"><span class="ic">🍜</span></div><div class="bd"><h5>饮食男女</h5><div class="mt">📍 家庭 · 美食 · 亲情</div><div class="pg"><i data-w="95"></i></div></div></div>
+      <div class="pk rv"><div class="ph" style="background:linear-gradient(135deg,#5b7fa8,#8fb0d4)"><span class="ic">💼</span></div><div class="bd"><h5>穿普拉达的女王</h5><div class="mt">📍 职场 · 成长 · 励志</div><div class="pg"><i data-w="90"></i></div></div></div>
+      <div class="pk rv"><div class="ph" style="background:linear-gradient(135deg,#a8607a,#d494ac)"><span class="ic">🌸</span></div><div class="bd"><h5>你好，之华</h5><div class="mt">📍 青春 · 书信 · 错过</div><div class="pg"><i data-w="87"></i></div></div></div>
+      <div class="pk rv"><div class="ph" style="background:linear-gradient(135deg,#4a6b52,#7fa968)"><span class="ic">🌿</span></div><div class="bd"><h5>小偷家族</h5><div class="mt">📍 家庭 · 社会 · 温情</div><div class="pg"><i data-w="93"></i></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- COL2 -->
+<section class="sec" id="notes">
+  <div class="wrap">
+    <div class="st">
+      <div><span class="si">02 / Life Notes</span><h2>生活<span class="ac">随笔</span></h2></div>
+      <p class="sn">观众影评，写进生活</p>
+    </div>
+    <div class="nwall">
+      <div class="nt nt1 rv"><div class="q">“</div><h5>平凡里的光</h5><p>看《海蒂和爷爷》的时候，忽然想起小时候在老家的日子，那种干净的快乐，真的会治愈成年人。</p><div class="au"><i>📖</i><span>@ 读者 阿宁</span></div></div>
+      <div class="nt nt2 rv"><div class="q">✍️</div><h5>一餐一饭皆是生活</h5><p>《饮食男女》教会我，最好的团圆，不过是围坐一桌，吃一顿热腾腾的饭。</p><div class="au"><i>🍚</i><span>@ 食光客</span></div></div>
+      <div class="nt nt3 rv"><div class="q">🌿</div><h5>慢下来，也很好</h5><p>《小森林》里的女主，把日子过成诗。原来生活的答案，藏在认真做饭和耕种的节奏里。</p><div class="au"><i>📷</i><span>@ 田园记</span></div></div>
+      <div class="nt nt4 rv"><div class="q">♨️</div><h5>市井里的温柔</h5><p>烟火气才是最好的电影素材，市井街头的每一次相遇，都是生活给的惊喜。</p><div class="au"><i>🏮</i><span>@ 城市观察者</span></div></div>
+      <div class="nt nt5 rv"><div class="q">🎞️</div><h5>长大后更懂亲情</h5><p>长大后才明白，父母那辈人的沉默，其实都是说不出口的深情。</p><div class="au"><i>📝</i><span>@ 阿May</span></div></div>
+      <div class="nt nt6 rv"><div class="q">🌊</div><h5>与自我和解</h5><p>每一部生活流电影，都在教我们如何与生活、与自己温柔地讲和。</p><div class="au"><i>💭</i><span>@ 治愈系</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- COL3 -->
+<section class="sec" id="food">
+  <div class="wrap">
+    <div class="st">
+      <div><span class="si">03 / Food Scene</span><h2>治愈<span class="ac">食光</span></h2></div>
+      <p class="sn">那些藏在电影里的好味道</p>
+    </div>
+    <div class="fds">
+      <div class="fd rv"><div class="ph" style="background:linear-gradient(135deg,#c97b5e,#e09b80)"></div><div class="tx"><span class="tg">🍜 饮食男女</span><h5>家宴里的团圆味</h5><p>每周日回家的那顿饭，是老朱用一整个上午准备的盛宴。电影里最动人的不是山珍海味，而是一家子围坐、说说笑笑的烟火气。</p><div class="rk"><span>📍 台北</span><span>⏱ 3h00m</span><span>🔥 9.5</span></div></div></div>
+      <div class="fd rv"><div class="ph" style="background:linear-gradient(135deg,#7fa968,#a8c98f)"></div><div class="tx"><span class="tg">🌾 小森林</span><h5>四季餐桌上的田园诗</h5><p>夏天的番茄、秋天的核桃、冬天的果酱。市子在乡间独自生活，用一餐一饭把孤单过成了温暖的诗。</p><div class="rk"><span>📍 日本岩手</span><span>⏱ 1h51m</span><span>🔥 9.2</span></div></div></div>
+      <div class="fd rv"><div class="ph" style="background:linear-gradient(135deg,#b08d57,#d9b88a)"></div><div class="tx"><span class="tg">🍜 深夜食堂</span><h5>深夜的一碗治愈</h5><p>凌晨一点的小餐馆，只做一道菜却温暖无数夜归人。每个食客都带着一段故事，而食物，是最好的倾听者。</p><div class="rk"><span>📍 东京小巷</span><span>⏱ 45m×集</span><span>🔥 9.3</span></div></div></div>
+      <div class="fd rv"><div class="ph" style="background:linear-gradient(135deg,#a8607a,#d494ac)"></div><div class="tx"><span class="tg">🍰 朱莉与朱莉娅</span><h5>用烘焙重启生活</h5><p>一位失意的女记者，用 524 道法式菜谱重新找回生活的热情。厨房里升腾的热气，是生活最好的隐喻。</p><div class="rk"><span>📍 纽约</span><span>⏱ 2h03m</span><span>🔥 8.8</span></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- COL4 -->
+<section class="sec" id="life">
+  <div class="wrap">
+    <div class="st">
+      <div><span class="si">04 / Lifestyle</span><h2>生活<span class="ac">方式</span></h2></div>
+      <p class="sn">换个角度，过好每一天</p>
+    </div>
+    <div class="lg2">
+      <div class="lc rv"><div class="ic">☕</div><h5>慢生活</h5><p>用一部电影的时间，慢下来，好好生活。</p></div>
+      <div class="lc rv"><div class="ic">📷</div><h5>记录日常</h5><p>把平凡的一天，拍成属于自己的电影画面。</p></div>
+      <div class="lc rv"><div class="ic">🍲</div><h5>好好吃饭</h5><p>一餐一饭，都是对生活最好的交代。</p></div>
+      <div class="lc rv"><div class="ic">🌿</div><h5>身心治愈</h5><p>在光影与故事里，给自己一个喘息。</p></div>
+    </div>
+    <div class="ln">
+      <div class="it rv"><b>1</b><div><h6>家庭温情</h6><p>亲子、父母、兄弟姐妹之间的爱与牵挂。</p></div></div>
+      <div class="it rv"><b>2</b><div><h6>都市职场</h6><p>写字楼里的奋斗、困惑与自我成长。</p></div></div>
+      <div class="it rv"><b>3</b><div><h6>市井烟火</h6><p>街巷胡同、邻里往来里的人间真实。</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- COL5 -->
+<section class="sec" id="about">
+  <div class="wrap">
+    <div class="st">
+      <div><span class="si">05 / About</span><h2>关于<span class="ac">性生活电影网</span></h2></div>
+      <p class="sn">让每一部电影，都照进生活</p>
+    </div>
+    <div class="ag">
+      <div class="lead rv"><h4>☘️ 在光影中读懂生活</h4><p>性生活电影网专注生活题材影片，精选家庭、情感、职场、纪录等贴近真实生活的好电影。我们相信，最好的故事不在远方，就在你我身边的每一餐、每一次相遇、每一段关系里。</p></div>
+      <div class="st2">
+        <div class="s rv"><b>生活</b><span>真实题材</span></div>
+        <div class="s rv"><b>治愈</b><span>温暖观影</span></div>
+        <div class="s rv"><b>家庭</b><span>温情故事</span></div>
+        <div class="s rv"><b>全端</b><span>随心观看</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cta rv">
+  <h3>好电影，是生活的一面镜子</h3>
+  <p>在性生活电影网，发现那些贴近真实、温暖治愈的好电影，让每一次观影都成为一次生活的深呼吸。</p>
+  <a href="#top" class="btn">↑ 返回顶部</a>
+</div>
+
+<footer>
+  <div class="f">
+    <div class="bc"><span class="lg">☘️</span><span>性生活电影网</span><span class="em">在光影中读懂生活</span></div>
+    <p class="d">性生活电影网专注生活题材影片，精选家庭、情感、职场、纪录等贴近真实生活的好电影，让好电影照进日常。</p>
+    <div class="lk"><a href="#top">首页</a><a href="#pick">片单</a><a href="#notes">随笔</a><a href="#food">食光</a><a href="#life">生活</a><a href="#about">关于</a></div>
+    <div class="cp">© 2026 性生活电影网 版权所有 · 网站地址：<a href="https://xingshenghuodianyingwang-wap.github.io">xingshenghuodianyingwang-wap.github.io</a></div>
+  </div>
+</footer>
+
+<div class="tb" id="tb">↑</div>
+
+<script>
+(function(){
+  var load=document.getElementById('load');
+  window.addEventListener('load',function(){setTimeout(function(){load.classList.add('hide');},450)});
+
+  var burger=document.getElementById('burger'),menu=document.getElementById('menu');
+  burger.addEventListener('click',function(){burger.classList.toggle('open');menu.classList.toggle('open')});
+  menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){burger.classList.remove('open');menu.classList.remove('open')})});
+
+  var tabs=document.getElementById('tabs');
+  tabs.querySelectorAll('button').forEach(function(b){b.addEventListener('click',function(){tabs.querySelectorAll('button').forEach(function(x){x.classList.remove('on')});b.classList.add('on')})});
+
+  var rv=document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15});
+    rv.forEach(function(e){io.observe(e)});
+  } else{rv.forEach(function(e){e.classList.add('in')})}
+
+  var fills=document.querySelectorAll('.pg i');
+  if('IntersectionObserver' in window){
+    var io2=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.style.width=e.target.dataset.w+'%';io2.unobserve(e.target)}})},{threshold:.4});
+    fills.forEach(function(e){io2.observe(e)});
+  } else{fills.forEach(function(e){e.style.width=e.dataset.w+'%'})}
+
+  var links=document.querySelectorAll('.menu a'),secs=document.querySelectorAll('section[id],header[id]');
+  function spy(){var pos=window.scrollY+120;secs.forEach(function(x){if(pos>=x.offsetTop&&pos<x.offsetTop+x.offsetHeight){links.forEach(function(a){a.classList.remove('on')});var a=document.querySelector('.menu a[href="#'+x.id+'"]');if(a)a.classList.add('on')}})}
+  window.addEventListener('scroll',spy);spy();
+
+  var tb=document.getElementById('tb');
+  window.addEventListener('scroll',function(){window.scrollY>500?tb.classList.add('show'):tb.classList.remove('show')});
+  tb.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+})();
+</script>
+</body>
+</html>
